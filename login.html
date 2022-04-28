@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+         body{
+            width: 25%;
+            margin: auto;
+            /* text-align: center; */
+        }
+        #sign{
+            width: 100%;
+            /* text-align: center; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            padding: 50px 40px;
+        }
+        #login>input
+        {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            font-size: 20px;
+      }
+      #banner
+      {
+         
+         margin: auto;
+         margin-top: 20%;
+         text-align: center;
+      }
+      p{
+          text-align: center;
+      }
+      #mit
+      {
+        cursor: pointer;
+        background-color: blue;
+        color: aliceblue;
+      }
+      #login>p:nth-of-type(2)
+    {
+        font-size:25px;
+        color: gray;
+    }
+      #submit
+    {
+        color: blue;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+     
+   
+   <div id="banner"><img src="https://sso.masaischool.com/brand_dark.svg" alt="Masai Logo"/></div> 
+      
+   <form id="login" >
+       <h2> Email</h2>
+       <input type="email" id="email" placeholder="     Enter email here">
+       <!-- <br> -->
+       <h2>Password</h2>
+       <input type="password" id="password" placeholder="     Enter Password">
+       <p style="color:gray">By signing up, I accept the Masai School <a href="https://masaischool.com/terms">Terms of Service</a>  and ackmowledege the <a href="https://masaischool.com/privacy">Privacy Policy.</a> </p>
+       <input id="mit" type="submit">
+
+       <p>Don't have an account? <a  id="submit" href="index.html"> Sign Up</a></p>
+   </form>
+</body>
+</html>
+
+<script>
+
+
+var input=document.querySelector("#login")
+
+input.addEventListener("submit",myfunction)
+
+var data =JSON.parse(localStorage.getItem("details"));
+console.log(data)
+function myfunction(){
+    event.preventDefault();
+
+
+    data.forEach(function(el) {
+   if(login.email.value==el.email&&login.password.value==el.password)
+   {
+       alert("Login successful.")
+       window.location.reload
+       document.getElementById("#email").value=" "
+   }
+   else if(login.email.value!=el.email||login.password.value!=el.password)
+   {
+       alert("wrong credentials")
+       document.getElementById("#email").value=" "
+       window.location.reload
+   }
+  
+});
+
+
+
+}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</script>

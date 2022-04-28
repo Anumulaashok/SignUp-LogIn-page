@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Msaai sign up</title>
+    <style>
+        body{
+            width: 25%;
+            margin: auto;
+            /* text-align: center; */
+        }
+        #sign{
+            width: 100%;
+            /* text-align: center; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            padding: 50px 40px;
+        }
+        #sign>input
+        {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            font-size: 20px;
+      }
+      #banner
+      {
+         
+         margin: auto;
+         margin-top: 20%;
+         text-align: center;
+      }
+      p{
+          text-align: center;
+      }
+      #sign>input:nth-child(8):hover
+      {
+        cursor: pointer;
+        background-color: blue;
+        color: aliceblue;
+      }
+      #sign>p:nth-of-type(2)
+    {
+        font-size:25px;
+        color: gray;
+    }
+      #sign>p:nth-of-type(2)>a
+    {
+        color: blue;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    
+   
+   <div id="banner"><img src="https://sso.masaischool.com/brand_dark.svg" alt="Masai Logo"/></div> 
+      
+    <form id="sign" >
+          <h2> Full Name</h2>
+        <input type="text" id="name" placeholder="    Enter Your full name">
+        <!-- <br> -->
+        <h2> Email</h2>
+        <input type="email" id="email" placeholder="     Enter email here">
+        <!-- <br> -->
+        <h2>Password</h2>
+        <input type="password" id="password" placeholder="     Enter Password">
+        <p style="color:gray">By signing up, I accept the Masai School <a href="https://masaischool.com/terms">Terms of Service</a>  and ackmowledege the <a href="https://masaischool.com/privacy">Privacy Policy.</a> </p>
+        <input type="submit">
+
+        <p>Already have an account? <a href="login.html"> Sign In</a></p>
+    </form>
+</body>
+</html>
+
+
+<script>
+
+var input=document.querySelector("#sign")
+
+input.addEventListener("submit",myfunction)
+
+
+var arr=JSON.parse(localStorage.getItem("details"))||[];
+
+
+function myfunction(){
+event.preventDefault();
+
+var data={
+        name:sign.name.value,
+        email:sign.email.value,
+        password:sign.password.value
+}
+// console.log(data);
+arr.push(data);
+localStorage.setItem("details",JSON.stringify(arr))
+window.location.href="login.html"
+}
+    
+</script>
